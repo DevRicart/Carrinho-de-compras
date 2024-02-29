@@ -11,3 +11,15 @@ function adicionarItem(item) {
   quantidade.innerHTML = qtd[item]
   total.innerHTML = valorTotal[item].toFixed(2).replace('.', ',')
 }
+
+function retirarItem(item) {
+  let quantidade = document.getElementById('quantidade' + item)
+  let total = document.getElementById('total' + item)
+  if (qtd[item] > 0) {
+    qtd[item] -= 1
+    valorTotal[item] = Number.parseFloat(valorProduto[item]) * qtd[item]
+
+    quantidade.innerHTML = qtd[item]
+    total.innerHTML = valorTotal[item].toFixed(2).replace('.', ',')
+  }
+}
